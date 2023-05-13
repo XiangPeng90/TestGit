@@ -1,0 +1,289 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/xiangpeng/Projects/FoodMall/FoodMall/ASP.NET_MVC.FoodMall.csproj": {}
+  },
+  "projects": {
+    "/Users/xiangpeng/Projects/FoodMall/Entities/Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/xiangpeng/Projects/FoodMall/Entities/Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "/Users/xiangpeng/Projects/FoodMall/Entities/Entities.csproj",
+        "packagesPath": "/Users/xiangpeng/.nuget/packages/",
+        "outputPath": "/Users/xiangpeng/Projects/FoodMall/Entities/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/xiangpeng/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/xiangpeng/Projects/FoodMall/FoodMall/ASP.NET_MVC.FoodMall.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/xiangpeng/Projects/FoodMall/FoodMall/ASP.NET_MVC.FoodMall.csproj",
+        "projectName": "ASP.NET_MVC.FoodMall",
+        "projectPath": "/Users/xiangpeng/Projects/FoodMall/FoodMall/ASP.NET_MVC.FoodMall.csproj",
+        "packagesPath": "/Users/xiangpeng/.nuget/packages/",
+        "outputPath": "/Users/xiangpeng/Projects/FoodMall/FoodMall/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/xiangpeng/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/xiangpeng/Projects/FoodMall/IService/IService.csproj": {
+                "projectPath": "/Users/xiangpeng/Projects/FoodMall/IService/IService.csproj"
+              },
+              "/Users/xiangpeng/Projects/FoodMall/Service/Service.csproj": {
+                "projectPath": "/Users/xiangpeng/Projects/FoodMall/Service/Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/xiangpeng/Projects/FoodMall/IService/IService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/xiangpeng/Projects/FoodMall/IService/IService.csproj",
+        "projectName": "IService",
+        "projectPath": "/Users/xiangpeng/Projects/FoodMall/IService/IService.csproj",
+        "packagesPath": "/Users/xiangpeng/.nuget/packages/",
+        "outputPath": "/Users/xiangpeng/Projects/FoodMall/IService/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/xiangpeng/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/xiangpeng/Projects/FoodMall/Entities/Entities.csproj": {
+                "projectPath": "/Users/xiangpeng/Projects/FoodMall/Entities/Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/xiangpeng/Projects/FoodMall/Service/Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/xiangpeng/Projects/FoodMall/Service/Service.csproj",
+        "projectName": "Service",
+        "projectPath": "/Users/xiangpeng/Projects/FoodMall/Service/Service.csproj",
+        "packagesPath": "/Users/xiangpeng/.nuget/packages/",
+        "outputPath": "/Users/xiangpeng/Projects/FoodMall/Service/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/xiangpeng/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/xiangpeng/Projects/FoodMall/Entities/Entities.csproj": {
+                "projectPath": "/Users/xiangpeng/Projects/FoodMall/Entities/Entities.csproj"
+              },
+              "/Users/xiangpeng/Projects/FoodMall/IService/IService.csproj": {
+                "projectPath": "/Users/xiangpeng/Projects/FoodMall/IService/IService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

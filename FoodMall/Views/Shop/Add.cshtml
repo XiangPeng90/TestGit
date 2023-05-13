@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_ShopLayout";
+}
+@model Food
+<main role="main" class="pb-3">
+    <div class="p-3 d-flex justify-content-center align-items-center" style="height:400px;">
+        <form asp-action="Add" asp-controller="Shop" method="post" enctype="multipart/form-data">
+            <h4>添加菜品</h4>
+            <div class="input-group flex-nowrap " style="width:300px;">
+                <span class="input-group-text" id="addon-wrapping">名称</span>
+                <input type="text" class="form-control f_name" asp-for=@Model.f_name placeholder="foodname" aria-label="foodname" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap " style="width:300px;">
+                <span class="input-group-text" id="addon-wrapping">价格</span>
+                <input type="text" class="form-control price" asp-for=@Model.price placeholder="price" aria-label="price" aria-describedby="addon-wrapping">
+            </div>
+            <div class="mb-3 " style="width:300px;">
+                <input class="form-control img" type="file" name="file">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">介绍：</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" asp-for=@Model.description rows="3"></textarea>
+            </div>
+            <div class="input-group flex-nowrap p-1">
+                <input type="submit" value="提交" class="btn btn-outline-success">
+            </div>
+        </form>
+    </div>
+</main>
+

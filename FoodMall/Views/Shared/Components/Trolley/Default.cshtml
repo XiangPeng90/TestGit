@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model User
+ <li class="nav-item nav-link align-items-center ">
+        <a asp-action="trolley" asp-controller="User" asp-route-id="@ViewBag.shop"> 
+            <svg class="bi bi-bag text-black" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M14 5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5zM1 4v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4H1z" />
+            <path d="M8 1.5A2.5 2.5 0 0 0 5.5 4h-1a3.5 3.5 0 1 1 7 0h-1A2.5 2.5 0 0 0 8 1.5z" />
+            </svg>
+        </a>
+</li>
+ <li class="nav-link nav-item  align-items-center text-black">
+        <div class="img-box">
+            <img src="/@Model.avatar"/>
+            <div class="menu">
+                <div style="height:50px"></div>
+                <div class="d-flex justify-content-center"><b>@Model.u_name</b></div>
+                <div class="btn-group-vertical mx-xl-4" role="group" aria-label="Vertical button group">
+                    <a type="button" class="btn btn-light" style="width:250px;">个人中心</a>
+                    <a type="button" class="btn btn-light" style="width:250px;">历史订单</a>
+                    <a type="button" class="btn btn-light" style="width:250px;" asp-action="exit" asp-controller="User">退出</a>
+                </div>
+            </div>
+        </div>
+</li>

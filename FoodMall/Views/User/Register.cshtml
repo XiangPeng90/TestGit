@@ -1,0 +1,47 @@
+﻿@{
+    var Message = (string)ViewBag.Message;
+}
+@model User
+
+<h1>This is UserRegister</h1>
+<div class="p-2">
+    <div class="d-flex justify-content-center align-items-center" style="height:500px;">
+        <form asp-action="Register" asp-controller="User" method="post">
+            <h3 class="text-center">注册</h3>
+            <div class="input-group flex-nowrap" style="width:300px;">
+                <span class="input-group-text" id="addon-wrapping">账号</span>
+                <input type="text" class="form-control" asp-for=@Model.u_account placeholder="account" aria-label="account" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap" style="width:300px;">
+                <span class="input-group-text" id="addon-wrapping">昵称</span>
+                <input type="text" class="form-control" asp-for=@Model.u_name placeholder="name" aria-label="s_name" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap" style="width:300px;">
+                <span class="input-group-text" id="addon-wrapping">密码</span>
+                <input type="password" class="form-control" asp-for=@Model.u_password placeholder="password" aria-label="password" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap" style="width:300px;">
+                <span class="input-group-text" id="addon-wrapping">确认密码</span>
+                <input type="password" class="form-control" asp-for=@Model.u_Confirmpassword placeholder="Confirmpassword" aria-label="Confirmpassword" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap p-1 d-flex justify-content-center">
+                <button type="submit" class="btn btn-outline-success" onclick="alert">注册</button>
+                <button type="reset" class="btn btn-outline-primary" onclick="alert">重置</button>
+            </div>
+        </form>
+    </div>
+    <div>@Html.Label(Message)</div>
+    <div>
+        @{
+            if (Message == "注册成功")
+            {
+                @Html.ActionLink("返回登录", "Login", "User")
+            }
+        }
+    </div>
+</div>
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,145 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<Food>
+@{
+    Layout = "_ShopLayout";
+    ViewData["Title"] = "Index";
+}
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">修改菜品</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="d-flex justify-content-center">
+                <form  id="form" method="post" asp-action="update" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="input-group flex-nowrap " style="width:300px;">
+                            <span class="input-group-text" id="addon-wrapping">编号</span>
+                            <input type="text" class="form-control id" id="id" name="id" placeholder="Readonly input here…" aria-label="id" aria-describedby="addon-wrapping" readonly>
+                        </div>
+                        <div class="input-group flex-nowrap " style="width:300px;">
+                            <span class="input-group-text" id="addon-wrapping">名称</span>
+                            <input type="text" id="name" class="form-control" name="name" aria-label="foodname" aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="input-group flex-nowrap " style="width:300px;">
+                            <span class="input-group-text" id="addon-wrapping">价格</span>
+                            <input type="text" id="price" class="form-control" name="price" aria-label="price" aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="mb-3 " style="width:300px;">
+                            <input class="form-control img" id="file" type="file" name="file">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" onclick="edit">提交</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<main role="main" class="pb-3">
+    <div class="row p-2" style="width:100%;height:auto;">
+        @if (ViewBag.Null!=null && Model.Count==0)
+        {
+            <div class="mt-xl-5 d-flex justify-content-center">
+                <h1>@ViewBag.Null</h1>
+            </div>
+        }
+        @foreach (var food in Model)
+        {
+        <div class="card mx-2 mt-2 mb-2 bore bg-light" style="width: 18rem;">
+                <img src="/@food.img" class="rounded mx-auto d-block mt-1 img-responsive" style="width:auto;height:auto;max-height:100%;max-width:100%" alt="错误">
+            <div class="card-body">
+                <h5 class="card-title" id="f_name">@food.f_name : @food.price</h5>
+                <p class="card-text">@food.description</p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" id="btn" onclick="update(@food.id)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                修改菜品
+                </button>
+                <a asp-action="delete" asp-route-id="@food.id" asp-controller="Shop" class="btn btn-primary bg-danger" onclick="alert('删除成功')">删除菜品</a>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="d-flex justify-content-center">
+    @if ( Model.Count!=0)
+    {
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link page" href="?page=1&keywords=@(Context.Request.Query["keywords"].ToString() ?? "")" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+            @if (ViewBag.pages<6){
+
+                for (int i = 1; i <= ViewBag.pages; i++)
+                {
+                    <li class="page-item"><a class="page-link" href="?page=@i&keywords=@(Context.Request.Query["keywords"].ToString() ?? "")">@i</a></li>
+                }  
+            }
+            else
+            {
+                <li class="page-item"><a class="page-link" href="?page=1&keywords=@(Context.Request.Query["keywords"].ToString() ?? "")" onclick="one"><span id="1">1</span></a></li>
+                <li class="page-item"><a class="page-link" href="?page=2&keywords=@(Context.Request.Query["keywords"].ToString() ?? "")" onclick="two"><span id="2">2</span></a></li>
+                <li class=""><span class="page-link border-0" href="javascript:void(0)">···</span></li>
+                <li class="page-item"><a class="page-link " href="?page=@(ViewBag.pages-1)&keywords=@(Context.Request.Query["keywords"].ToString() ?? "")"><span id="lasttwo">@(ViewBag.pages - 1)</span></a></li>
+                <li class="page-item"><a class="page-link " href="?page=@ViewBag.pages&keywords=@(Context.Request.Query["keywords"].ToString() ?? "")"><span id="lastone">@ViewBag.pages</span></a></li>
+            }
+            <li class="page-item">
+                <a class="page-link" href="?page=@ViewBag.pages&keywords=@(Context.Request.Query["keywords"].ToString() ?? "")" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                </a>
+                </li>
+    </ul>
+    }
+    </div>
+</main>
+@section scripts{
+    <script type="text/javascript">
+        function update(id) {
+            $("#name").text("");
+            $("#price").text("");
+            var f_name = $("#f_name").text().split(":");
+            $("#id").attr("value",id);
+            $("#name").attr("placeholder", f_name[0]);
+            $("#price").attr("placeholder", f_name[1]);
+        }
+        function edit() {
+            var url = "/Shop/update/";
+            $.ajax({
+                url: url,
+                type: "post",
+                data: $("#form").serialize(),
+                dataType: "json",
+                success: function () {
+                    alert("错误");
+                },
+                error: function () {
+                    alert("修改成功");
+                }
+
+            });
+        }
+        
+        function one() {
+            var pageleft = $("#1").text();
+            if (pageleft != 1) {
+                var one =pageleft -1;
+                $("#1").text(one.toString())
+                $("#2").text(pageleft.toString());
+            }
+        }
+        function two() {
+            var pageright = $("#2").text();
+            var two = pageleft + 1;
+            $("#1").text(pageright.toString());
+            $("#2").text(two.ToString());
+        }
+    </script>
+}

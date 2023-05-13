@@ -1,0 +1,1 @@
+/Users/xiangpeng/Projects/FoodMall/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache

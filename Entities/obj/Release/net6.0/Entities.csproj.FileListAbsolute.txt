@@ -1,0 +1,14 @@
+/Users/xiangpeng/Projects/FoodMall/Entities/bin/Release/net6.0/Entities.deps.json
+/Users/xiangpeng/Projects/FoodMall/Entities/bin/Release/net6.0/Entities.runtimeconfig.json
+/Users/xiangpeng/Projects/FoodMall/Entities/bin/Release/net6.0/Entities.dll
+/Users/xiangpeng/Projects/FoodMall/Entities/bin/Release/net6.0/Entities.pdb
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.csproj.AssemblyReference.cache
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.GeneratedMSBuildEditorConfig.editorconfig
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.AssemblyInfoInputs.cache
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.AssemblyInfo.cs
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.csproj.CoreCompileInputs.cache
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.dll
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/refint/Entities.dll
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.pdb
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/Entities.genruntimeconfig.cache
+/Users/xiangpeng/Projects/FoodMall/Entities/obj/Release/net6.0/ref/Entities.dll

@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_UserLayout";
+}
+@model List<Shop>
+<div class="p-xl-3 mt-xl-5 row d-flex justify-content-center">
+    @foreach (var shop in Model)
+    {
+        <div class="card mt-xl-3 bg-light mx-lg-2" style="max-width: 540px;border-radius:10px">
+            <div class="g-0">
+                <div class="col-md-4 bg-white">
+                    <img src="/@shop.picture" class="img-fluid rounded-start img-responsive" style="width:auto;height:auto;max-height:100%;max-width:100%" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@shop.s_name</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">@shop.s_regist_time</small></p>
+                        <a asp-action="enterShop" asp-route-id="@shop.id" class="btn btn-primary ">进入店铺</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

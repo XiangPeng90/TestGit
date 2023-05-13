@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_UserTrolleyLayout";
+}
+@model List<Food>
+
+@foreach(var f in Model)
+{
+    <div >
+        <div><img  src="/@f.img"/>
+            <b>@f.f_name</b>
+            <b>@f.count</b>
+        </div>
+    </div>
+    <h1>@ViewBag.Error</h1>
+}
+<a class="btn btn-success" id="check" asp-action="Check">结算</a>
+
+@section scripts{
+    <script type="text/javascript">
+        function addtrolley(id) {
+            var url = "/User/addTrolley/";
+            var shopid= window.location.pathname.substring(16);
+             $.ajax({
+                url: url,
+                type: "POST",
+                data: {
+                    "shopId":shopid,
+                    "foodId":id
+                },
+                dataType: "JSON",
+                success:function () {
+                    alert("修改成功");
+                },
+                Error:function(){
+                    alert("OK");
+                }
+            });
+            }
+        setInterval("check()",30000)
+        function check(){
+            var url ="/Shop/Index/"
+            $.ajax{
+                url: url,
+                type:"GET",
+                async:true,
+                cache:false,
+                datatype:"JSON"
+                success:function(data){
+                    if(data.status==1){
+                    }
+                    alert("结算成功"):
+                },
+                Error:function(){
+                    alert("失败")
+                }
+            }
+        }
+    </script>
+}
